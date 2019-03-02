@@ -11,15 +11,14 @@ VOLUME /logs
 
 RUN apk update \
     && apk add bash mariadb-dev mysql-dev gcc linux-headers musl-dev uwsgi-python \
-    && apk add build-base python-dev jpeg-dev zlib-dev
+    && apk add build-base python-dev jpeg-dev zlib-dev unixodbc unixodbc-dev
     
 ## END BASELINE
 
 ########################################################################
 ## BEGIN PYTHON INSTALLS
 
-RUN pip install \
-    && pip install --upgrade pip \
+RUN pip install --upgrade pip \
     && pip install numpy \
     && pip install pandas \
     && pip install flask \
